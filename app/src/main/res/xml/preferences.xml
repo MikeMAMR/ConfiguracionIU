@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory
+        app:key="AppCat"
+        app:title="Acerca de la aplicación">
+        <Preference
+            app:key="buildVersion"
+            app:summary="1.0.0"
+            app:title="Versión de compilación" />
+        <SwitchPreferenceCompat
+            app:key="premium"
+            app:summary="No habilitado"
+            app:title="Mejorar a Premium"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:key="notifications_category"
+        app:title="Notificaciones">
+
+        <SwitchPreferenceCompat
+            app:key="notifications"
+            app:title="Habilitar notificaciones"/>
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:key="User_category"
+        app:title="Datos del usuario">
+        <SwitchPreferenceCompat
+            app:key="mostrar"
+            app:summary="No habilitado"
+            app:title="Mostrar datos"/>
+
+        <EditTextPreference
+            app:key="number"
+            app:title="Número de telefono"
+            app:isPreferenceVisible="false"
+            />
+        <EditTextPreference
+            app:key="correo"
+            app:title="Correo electronico"
+            app:isPreferenceVisible="false"/>
+        <EditTextPreference
+            app:key="nombre"
+            app:title="Nombre de usuario"
+            app:isPreferenceVisible="false"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:key="apariencia"
+        app:title="Apariencia">
+
+        <CheckBoxPreference
+            app:key="checkboc"
+            app:title="Colores automaticos"
+            >
+
+        </CheckBoxPreference>
+        <ListPreference
+            app:key="lista"
+            app:title="Idiomas disponibles"
+            app:entries="@array/Language"
+            app:entryValues="@array/languageAlias">
+        </ListPreference>
+        <ListPreference
+            android:key="@string/sp_key_foreground_color"
+            android:title="Color de fuente"
+            android:defaultValue="#00FFFF"
+            android:entries="@array/foreground_color_names_array"
+            android:entryValues="@array/foreground_color_values_array"
+            android:summary="Escoje tu color de fuente"
+
+            />
+        <ListPreference
+            android:key="@string/sp_key_background_color"
+            android:title="Color de fondo"
+            android:entries="@array/background_color_names_array"
+            android:entryValues="@array/background_color_values_array"
+            android:defaultValue="#DC143C"
+            android:summary="Escoje tu color de fondo"
+            />
+    </PreferenceCategory>
+    <PreferenceCategory
+        app:key="web"
+        app:title="Ir a sitio web">
+        <Preference
+
+            app:key="webpage"
+            app:title="Configuración del IU"
+            app:summary="Para más información consulte el sitio oficial">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://developer.android.com/guide/topics/ui/settings/customize-your-settings" />
+        </Preference>
+    </PreferenceCategory>
+
+
+</PreferenceScreen>
